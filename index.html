@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的食譜收藏</title>
+  <meta name="description" content="精選食譜收藏，包含各式中西式料理">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- 側邊欄 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">🍳 食譜收藏</h1>
+      </div>
+
+      <!-- 搜尋欄 -->
+      <div class="search-container">
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="recipeSearch" class="search-input" placeholder="搜尋食譜名稱或標籤...">
+        </div>
+      </div>
+
+      <!-- 標籤過濾區域 -->
+      <div class="sidebar-section collapsed">
+        <div class="section-header" data-section="filters">
+          <span class="section-icon">📌</span>
+          <span class="section-title">標籤過濾</span>
+          <span class="section-arrow">▼</span>
+        </div>
+        <div class="section-content" id="filtersContent">
+          <div class="filter-group">
+            <h4 class="filter-group-title">口味</h4>
+            <div class="filter-tags" data-category="taste">
+              <button class="filter-tag" data-tag="甜食">🍰 甜食</button>
+              <button class="filter-tag" data-tag="鹹食">🍖 鹹食</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="filter-group-title">用餐時段</h4>
+            <div class="filter-tags" data-category="meal">
+              <button class="filter-tag" data-tag="早餐">☀️ 早餐</button>
+              <button class="filter-tag" data-tag="午晚餐">🌙 午晚餐</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="filter-group-title">烹飪時間</h4>
+            <div class="filter-tags" data-category="time">
+              <button class="filter-tag" data-tag="<30m">⚡ &lt;30m</button>
+              <button class="filter-tag" data-tag="30m-1h">⏰ 30m-1h</button>
+              <button class="filter-tag" data-tag=">1h">⏳ &gt;1h</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4 class="filter-group-title">食材種類</h4>
+            <div class="filter-tags" data-category="ingredient">
+              <button class="filter-tag" data-tag="豬肉">🐷 豬肉</button>
+              <button class="filter-tag" data-tag="雞肉">🐔 雞肉</button>
+              <button class="filter-tag" data-tag="禽肉">🍗 禽肉</button>
+              <button class="filter-tag" data-tag="牛肉">🐄 牛肉</button>
+              <button class="filter-tag" data-tag="海鮮">🐟 海鮮</button>
+              <button class="filter-tag" data-tag="蔬食">🥬 蔬食</button>
+              <button class="filter-tag" data-tag="其他">🍢 其他</button>
+            </div>
+          </div>
+
+          <button class="clear-filters-btn" id="clearFilters">🔄 清除所有過濾</button>
+        </div>
+      </div>
+
+      <!-- 食譜列表 -->
+      <div class="sidebar-section">
+        <div class="section-header" data-section="recipes">
+          <span class="section-icon">📖</span>
+          <span class="section-title">所有食譜</span>
+          <span class="section-arrow">▼</span>
+        </div>
+        <div class="section-content" id="recipesContent">
+          <div class="recipe-list" id="recipeList">
+            <!-- 動態生成 -->
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 主內容區域 -->
+    <main class="main-content">
+      <div class="recipe-detail" id="recipeDetail">
+        <div class="welcome-message">
+          <div class="welcome-icon">👨‍🍳</div>
+          <h2>歡迎來到食譜收藏</h2>
+          <p>從左側選擇一個食譜開始探索美味料理</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
