@@ -629,15 +629,25 @@ body::before {
 }
 
 @media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+  }
+
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    max-height: 50vh;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    box-shadow: none;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
   }
 
   .main-content {
     margin-left: 0;
+    padding: var(--spacing-md);
   }
 
   .app-container {
@@ -645,7 +655,12 @@ body::before {
   }
 
   .recipe-name {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-top: var(--spacing-md);
+  }
+
+  .recipe-header {
+    margin-bottom: var(--spacing-lg);
   }
 }
 

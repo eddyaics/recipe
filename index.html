@@ -15,6 +15,9 @@
 
 <body>
   <div class="app-container">
+    <!-- 側邊欄背景遮罩 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- 側邊欄 -->
     <aside class="sidebar">
       <div class="sidebar-header">
@@ -96,6 +99,16 @@
 
     <!-- 主內容區域 -->
     <main class="main-content">
+      <!-- 手機版頂部欄 -->
+      <div class="mobile-header">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="切換側邊欄">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <h1 class="mobile-logo">🍳 食譜收藏</h1>
+      </div>
+
       <div class="recipe-detail" id="recipeDetail">
         <div class="welcome-message">
           <div class="welcome-icon">👨‍🍳</div>

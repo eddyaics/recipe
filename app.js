@@ -241,6 +241,25 @@ class RecipeApp {
       });
     }
 
+    // 側邊欄切換 (手機版)
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+
+    const toggleSidebar = () => {
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+    };
+
+    if (sidebarToggle) {
+      sidebarToggle.addEventListener('click', toggleSidebar);
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', toggleSidebar);
+    }
+
     // 側邊欄區塊折疊/展開
     document.querySelectorAll('.section-header').forEach(header => {
       header.addEventListener('click', () => {
@@ -255,6 +274,11 @@ class RecipeApp {
       if (recipeItem) {
         const recipeId = parseInt(recipeItem.dataset.id);
         this.showRecipeDetail(recipeId);
+
+        // 手機版選中後自動收起
+        if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+          toggleSidebar();
+        }
       }
     });
 
