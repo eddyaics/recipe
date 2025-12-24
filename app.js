@@ -131,8 +131,8 @@ class RecipeApp {
             </div>
         `;
 
-    // 滾動到頂部 (已取消，避免突然跳轉)
-    // detailContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // 每次選擇新食譜時，將頁面捲動回頂部
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   // ========================================
